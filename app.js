@@ -11,8 +11,6 @@ const PORT = process.env.PORT || 3000;
 // Parse JSON in request bodies
 app.use(bodyParser.json());
 
-// Use the response logger middleware
-app.use(responseLogger);
 
 // Serve the public folder (where index.html, activity.js, postmonger.js, styles.css, etc. are located)
 app.use(express.static(path.join(__dirname, 'public')));
