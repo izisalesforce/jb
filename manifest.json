@@ -1,0 +1,29 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+      "icon": "public/assets/icon.png",
+      "category": "customer",
+      "description": "Custom Activity for Passing a Parameter to an External API"
+    },
+    "type": "REST",
+    "lang": {
+      "en-US": {
+        "name": "Custom API Activity",
+        "description": "Sends a custom parameter to an external API."
+      }
+    },
+    "arguments": {
+      "execute": {
+        "inArguments": [],
+        "url": "https://yourserver.example.com/journeybuilder/execute",
+        "verb": "POST",
+        "body": ""
+      }
+    },
+    "configurationArguments": {
+      "applicationExtensionKey": "YOUR_APP_EXTENSION_KEY",
+      "configureUrl": "https://yourserver.example.com/config.html",
+      "saveUrl": "https://yourserver.example.com/journeybuilder/save"
+    }
+  }
+  

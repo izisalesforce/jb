@@ -1,0 +1,37 @@
+{
+    "name": "",
+    "id": null,
+    "key": "REST-1",
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "contactKey": "{{Contact.Key}}",
+            "FirstName": "{{Contact.Attribute.JourneyEntrySource.FirstName}}",
+            "LastName": "{{Contact.Attribute.JourneyEntrySource.LastName}}"
+          }
+        ],
+        "url": "https://requestbin.fullcontact.com/92a9rg/execute"
+      }
+    },
+    "configurationArguments": {
+      "publish": {
+        "url": "https://requestbin.fullcontact.com/92a9rg/publish"
+      }
+    },
+    "metaData": {
+      "icon": "https://sample-activity.herokuapp.com/icon.png",
+      "category": "message",
+      "iconSmall": "icon.png",
+      "originalIcon": "icon.png",
+      "isConfigured": true
+    },
+    "editable": true,
+    "outcomes": [
+      {
+        "next": "WAITBYDURATION-1"
+      }
+    ],
+    "errors": []
+  }
+  
