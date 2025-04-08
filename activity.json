@@ -8,15 +8,16 @@
           {
             "contactKey": "{{Contact.Key}}",
             "FirstName": "{{Contact.Attribute.JourneyEntrySource.FirstName}}",
-            "LastName": "{{Contact.Attribute.JourneyEntrySource.LastName}}"
+            "LastName": "{{Contact.Attribute.JourneyEntrySource.LastName}}",
+            "emailAddress": "{{InteractionDefaults.Email}}"
           }
         ],
-        "url": "https://requestbin.fullcontact.com/92a9rg/execute"
+        "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/execute"
       }
     },
     "configurationArguments": {
       "publish": {
-        "url": "https://requestbin.fullcontact.com/92a9rg/publish"
+        "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/publish"
       }
     },
     "metaData": {
