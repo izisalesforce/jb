@@ -1,67 +1,36 @@
-// routes/journeybuilder.js
-
-const express = require('express');
-const axios = require('axios');
-
-const router = express.Router();
-
-/**
- * Save Activity Configuration
- */
-router.post('/save', (req, res) => {
-    console.log('Save activity configuration:', JSON.stringify(req.body, null, 2));
-    // Persist configuration settings as needed.
-    res.status(200).json({});
-});
-
-/**
- * Validate Activity Configuration
- */
-router.post('/validate', (req, res) => {
-    console.log('Validate activity configuration:', JSON.stringify(req.body, null, 2));
-    // Perform validation logic if needed.
-    res.status(200).json({});
-});
-
-/**
- * Publish Activity Configuration
- */
-router.post('/publish', (req, res) => {
-    console.log('Publish activity configuration:', JSON.stringify(req.body, null, 2));
-    // Perform any additional actions on publish.
-    res.status(200).json({});
-});
-
-/**
- * Execute Journey Activity
- * Extracts the parameter and passes it to an external API.
- */
 router.post('/execute', async (req, res) => {
     console.log('Execute activity:', JSON.stringify(req.body, null, 2));
 
+    const DUPLICATED_EMAILS = {
+        emails: ['isandrearamirez@salesforce.com', 'test@example.com'] // Example emails
+    };
+
     try {
         const inArguments = req.body.inArguments || [];
-        let customParam;
+        let emailAddress;
 
-        if (inArguments.length > 0 && inArguments[0].customParam) {
-            customParam = inArguments[0].customParam;
+        if (inArguments.length > 0 && inArguments[0].emailAddress) {
+            emailAddress = inArguments[0].emailAddress;
         }
 
-        if (!customParam) {
-            console.error('Missing customParam in the payload.');
-            return res.status(400).json({ error: 'Missing customParam' });
+        if (!emailAddress) {
+            console.error('Missing emailAddress in the payload.');
+            return res.status(400).json({ error: 'Missing emailAddress' });
         }
 
-        // Replace with your actual external API endpoint
-        const apiEndpoint = 'https://externalapi.example.com/endpoint';
-        const apiResponse = await axios.post(apiEndpoint, { param: customParam });
+        // Check if the email exists in the dummy object
+        const isDuplicated = DUPLICATED_EMAILS.emails.includes(emailAddress);
 
-        console.log('External API response:', apiResponse.data);
-        res.status(200).json({ status: 'ok' });
+        console.log('Is email duplicated:', isDuplicated);
+
+        if (isDuplicated) {
+            res.status(200).json({ branchResult: 'excluded_contact' });
+        } else {
+            res.status(200).json({ branchResult: 'accepted_contact' });
+        }
+
     } catch (error) {
         console.error('Error executing custom activity:', error);
         res.status(500).json({ error: 'Failed to execute custom activity' });
     }
 });
-
-module.exports = router;

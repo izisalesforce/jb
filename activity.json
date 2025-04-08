@@ -28,11 +28,24 @@
       "isConfigured": true
     },
     "editable": true,
-    "outcomes": [
-      {
-        "next": "WAITBYDURATION-1"
-      }
-    ],
+   "outcomes": [
+    {
+        "arguments": {
+            "branchResult": "accepted_contact"
+        },
+        "metaData": {
+            "label": "Accepted"
+        }
+    },
+    {
+        "arguments": {
+            "branchResult": "excluded_contact"
+        },
+        "metaData": {
+            "label": "Excluded"
+        }
+    }
+],
     "errors": []
   }
   
