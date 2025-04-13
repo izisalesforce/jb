@@ -12,6 +12,11 @@
             "emailAddress": "{{InteractionDefaults.Email}}"
           }
         ],
+        "outArguments": [
+          {
+            "branchResult": ""
+          }
+        ],
         "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/execute"
       }
     },
@@ -28,6 +33,29 @@
       "isConfigured": true
     },
     "editable": true,
+    "schema": {
+      "arguments": {
+        "execute": {
+          "inArguments": [
+            {
+              "emailAddress": {
+                "dataType": "Email",
+                "isNullable": false,
+                "direction": "in"
+              }
+            }
+          ],
+          "outArguments": [
+            {
+              "branchResult": {
+                "dataType": "Text",
+                "direction": "out",
+                "access": "visible"
+              }
+            }
+          ]
+        }
+      },
    "outcomes": [
     {
         "arguments": {
