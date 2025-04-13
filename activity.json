@@ -55,11 +55,12 @@
             }
           ]
         }
-      },
+      }
+    },
    "outcomes": [
     {
         "arguments": {
-            "branchResult": "accepted_contact"
+            "branchResult": "accepted"
         },
         "metaData": {
             "label": "Accepted"
@@ -67,7 +68,7 @@
     },
     {
         "arguments": {
-            "branchResult": "excluded_contact"
+            "branchResult": "excluded"
         },
         "metaData": {
             "label": "Excluded"

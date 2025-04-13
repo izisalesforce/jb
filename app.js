@@ -25,7 +25,7 @@ app.post('/execute', (req, res) => {
   
     // Example: send a success response
     //return res.status(200).json({ status: 'ok' });
-    return res.status(200).json({ branchResult: 'excluded_contact' });
+    return res.status(200).json({ branchResult: 'excluded' });
   });
 
 app.post('/save', (req, res) => {
