@@ -11,19 +11,16 @@
         }
       ],
       "outArguments": [],
-      "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/execute",
-      "useJwt": true
+      "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/execute"
     }
   },
   "configurationArguments": {
     "applicationExtensionKey": "40fa43c2-9d71-4a07-a258-f0dbef7b83cb",
     "save": {
-    "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/save",
-    "useJwt": true
+    "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/save"
     },
     "publish": {
-      "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/publish",
-      "useJwt": true
+      "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/publish"
     }
   },
   "metaData": {
@@ -40,7 +37,7 @@
           "branchResult": "accepted"
       },
       "metaData": {
-          "label": "Accepted Contact 1"
+          "label": "Accepted Contact 2"
       }
   },
   {
@@ -48,7 +45,7 @@
           "branchResult": "excluded"
       },
       "metaData": {
-          "label": "Excluded Contact 1"
+          "label": "Excluded Contact 2"
       }
   }
   ],
