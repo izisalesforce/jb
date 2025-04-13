@@ -1,14 +1,63 @@
 {
-    "workflowApiVersion": "1.1",
-    "metaData": {
-      "icon": "assets/icon.png",
-      "category": "message"
-    },
-    "type": "REST",
-    "userInterfaces": {
-      "configInspector": {
-        "size": "medium"
+  "name": "",
+  "id": null,
+  "key": "REST-1",
+  "type": "RESTDECISION",
+  "arguments": {
+    "execute": {
+      "inArguments": [
+        {
+          "emailAddress": "{{InteractionDefaults.Email}}"
+        }
+      ],
+      "outArguments": [],
+      "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/execute"
+    }
+  },
+  "configurationArguments": {
+    "publish": {
+      "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/publish"
+    }
+  },
+  "metaData": {
+    "icon": "https://sample-activity.herokuapp.com/icon.png",
+    "category": "message",
+    "iconSmall": "icon.png",
+    "originalIcon": "icon.png",
+    "isConfigured": true
+  },
+  "editable": true,
+ "outcomes": [
+  {
+      "arguments": {
+          "branchResult": "accepted"
+      },
+      "metaData": {
+          "label": "Accepted"
       }
+  },
+  {
+      "arguments": {
+          "branchResult": "excluded"
+      },
+      "metaData": {
+          "label": "Excluded"
+      }
+  }
+  ],
+  "errors": [],
+"schema": {
+  "arguments": {
+    "execute": {
+      "inArguments": [{
+        "emailAddress": {
+          "dataType": "Email",
+          "direction": "in",
+          "isNullable": false
+        }
+      }],
+      "outArguments": []
     }
   }
-  
+}
+}
