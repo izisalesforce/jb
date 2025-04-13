@@ -35,32 +35,34 @@ app.post('/execute', (req, res) => {
         return res.status(400).json({ error: 'Invalid JWT' });
       }
       console.log('Decoded JWT:', decoded);
+
+      // console.log('Execute payload:', decoded);
+      // console.log('Request Headers:', req.headers);
+      const DUPLICATED_EMAILS = {
+        emails: ['isandrearamirez@salesforce.com', 'test@example.com'] // Example emails
+    };
+    const inArguments = decoded.inArguments || [];
+    let emailAddress;
+  
+    emailAddress = inArguments[0].emailAddress;
+    const isDuplicated = DUPLICATED_EMAILS.emails.includes(emailAddress);
+  
+          console.log('Is email duplicated:', isDuplicated);
+  
+          if (isDuplicated) {
+              return res.status(200).json({ branchResult: 'excluded' });
+          } else {
+              return res.status(200).json({ branchResult: 'accepted' });
+          }
     });
 
-    console.log('Execute payload:', decoded);
-    // console.log('Request Headers:', req.headers);
-    const DUPLICATED_EMAILS = {
-      emails: ['isandrearamirez@salesforce.com', 'test@example.com'] // Example emails
-  };
-  const inArguments = decoded.inArguments || [];
-  let emailAddress;
 
-  emailAddress = inArguments[0].emailAddress;
-  const isDuplicated = DUPLICATED_EMAILS.emails.includes(emailAddress);
-
-        console.log('Is email duplicated:', isDuplicated);
-
-        if (isDuplicated) {
-            return res.status(200).json({ branchResult: 'excluded' });
-        } else {
-            return res.status(200).json({ branchResult: 'accepted' });
-        }
 
     // Example: send a success response
     //return re(s.status(200).json({ status: 'ok' });
-    const responsePayload = { branchResult: "excluded" };
-    console.log('Response payload:',  JSON.stringify(responsePayload));
-    return res.status(200).json(responsePayload);
+    // const responsePayload = { branchResult: "excluded" };
+    // console.log('Response payload:',  JSON.stringify(responsePayload));
+    // return res.status(200).json(responsePayload);
   });
 
 app.post('/save', (req, res) => {
