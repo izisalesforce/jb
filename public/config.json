@@ -1,7 +1,7 @@
 {
   "name": "",
   "id": null,
-  "key": "33bcb48b-0306-4184-a8e5-58d9f779f69b",
+  "key": "40fa43c2-9d71-4a07-a258-f0dbef7b83cb",
   "type": "RESTDECISION",
   "arguments": {
     "execute": {
@@ -11,16 +11,19 @@
         }
       ],
       "outArguments": [],
-      "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/execute"
+      "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/execute",
+      "useJwt": true
     }
   },
   "configurationArguments": {
-    "applicationExtensionKey": "33bcb48b-0306-4184-a8e5-58d9f779f69b",
+    "applicationExtensionKey": "40fa43c2-9d71-4a07-a258-f0dbef7b83cb",
     "save": {
-    "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/save"
+    "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/save",
+    "useJwt": true
     },
     "publish": {
-      "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/publish"
+      "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/publish",
+      "useJwt": true
     }
   },
   "metaData": {
@@ -37,7 +40,7 @@
           "branchResult": "accepted"
       },
       "metaData": {
-          "label": "Accepted Contact Config"
+          "label": "Accepted Contact Activity"
       }
   },
   {
@@ -45,10 +48,11 @@
           "branchResult": "excluded"
       },
       "metaData": {
-          "label": "Excluded Contact Config"
+          "label": "Excluded Contact Activity"
       }
   }
   ],
+  "errors": [],
 "schema": {
   "arguments": {
     "execute": {
