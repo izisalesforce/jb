@@ -1,7 +1,7 @@
 {
     "name": "",
     "id": null,
-    "key": "REST-1",
+    "key": "33bcb48b-0306-4184-a8e5-58d9f779f69b",
     "type": "RESTDECISION",
     "arguments": {
       "execute": {
@@ -15,6 +15,10 @@
       }
     },
     "configurationArguments": {
+      "applicationExtensionKey": "33bcb48b-0306-4184-a8e5-58d9f779f69b",
+      "save": {
+			"url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/save"
+      },
       "publish": {
         "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/publish"
       }
