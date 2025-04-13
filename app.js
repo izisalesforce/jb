@@ -55,7 +55,8 @@ app.post('/execute', (req, res) => {
 app.post('/save', (req, res) => {
   // Handle the save event from Journey Builder
   console.log('Save payload:', req.body);
-  return res.status(200).json({});
+  // return res.status(200).json({});
+  return res.status(200).json({success: true});
 });
 
 // Handle the publish event
