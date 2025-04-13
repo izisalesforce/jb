@@ -37,7 +37,7 @@
           "branchResult": "accepted"
       },
       "metaData": {
-          "label": "Accepted Contact"
+          "label": "Accepted Contact Config"
       }
   },
   {
@@ -45,7 +45,7 @@
           "branchResult": "excluded"
       },
       "metaData": {
-          "label": "Excluded Contact"
+          "label": "Excluded Contact Config"
       }
   }
   ],

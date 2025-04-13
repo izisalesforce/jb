@@ -22,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.post('/execute', (req, res) => {
     // Handle the data from Journey Builder, if needed
     console.log('Execute payload:', req.body);
+    console.log('Request Headers:', req.headers);
     const DUPLICATED_EMAILS = {
       emails: ['isandrearamirez@salesforce.com', 'test@example.com'] // Example emails
   };
