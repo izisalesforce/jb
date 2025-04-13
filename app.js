@@ -9,7 +9,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Parse JSON in request bodies
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+
+// Register middleware that parses the request payload.
+app.use(require('body-parser').raw({
+	type: 'application/jwt'
+}));
 
 
 // Serve the public folder (where index.html, activity.js, postmonger.js, styles.css, etc. are located)
