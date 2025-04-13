@@ -50,10 +50,10 @@
     "arguments": {
       "execute": {
         "inArguments": [{
-          "discountCode": {
-            "dataType": "Text",
+          "emailAddress": {
+            "dataType": "Email",
             "direction": "in",
-            "access": "visible"
+            "isNullable": false
           }
         }],
         "outArguments": []
