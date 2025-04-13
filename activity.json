@@ -2,21 +2,15 @@
     "name": "",
     "id": null,
     "key": "REST-1",
+    "type": "REST",
     "arguments": {
       "execute": {
         "inArguments": [
           {
-            "contactKey": "{{Contact.Key}}",
-            "FirstName": "{{Contact.Attribute.JourneyEntrySource.FirstName}}",
-            "LastName": "{{Contact.Attribute.JourneyEntrySource.LastName}}",
             "emailAddress": "{{InteractionDefaults.Email}}"
           }
         ],
-        "outArguments": [
-          {
-            "branchResult": ""
-          }
-        ],
+        "outArguments": [],
         "url": "https://izi-test-custom-activity-c60c7b8b2f98.herokuapp.com/execute"
       }
     },
@@ -36,15 +30,7 @@
     "schema": {
       "arguments": {
         "execute": {
-          "inArguments": [
-            {
-              "emailAddress": {
-                "dataType": "Email",
-                "isNullable": false,
-                "direction": "in"
-              }
-            }
-          ],
+          "inArguments": [],
           "outArguments": [
             {
               "branchResult": {

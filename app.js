@@ -25,8 +25,8 @@ app.post('/execute', (req, res) => {
   
     // Example: send a success response
     //return re(s.status(200).json({ status: 'ok' });
-    const responsePayload = { "branchResult": "excluded" };
-    console.log('Response payload:', responsePayload);
+    const responsePayload = { branchResult: "excluded" };
+    console.log('Response payload:',  JSON.stringify(responsePayload));
     return res.status(200).json(responsePayload);
   });
 
