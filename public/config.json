@@ -40,7 +40,7 @@
           "branchResult": "accepted"
       },
       "metaData": {
-          "label": "Accepted Contact Activity"
+          "label": "Accepted Contact 1"
       }
   },
   {
@@ -48,7 +48,7 @@
           "branchResult": "excluded"
       },
       "metaData": {
-          "label": "Excluded Contact Activity"
+          "label": "Excluded Contact 1"
       }
   }
   ],
