@@ -24,8 +24,9 @@ app.post('/execute', (req, res) => {
     console.log('Execute payload:', req.body);
   
     // Example: send a success response
-    //return res.status(200).json({ status: 'ok' });
-    return res.status(200).json({ branchResult: 'excluded' });
+    //return re(s.status(200).json({ status: 'ok' });
+    console.log('request accepted');
+    return res.status(200).json({ branchResult: 'accepted' });
   });
 
 app.post('/save', (req, res) => {
