@@ -3,7 +3,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,13 +25,24 @@ app.use(express.static(path.join(__dirname, 'public')));
  * (e.g., /execute, /save, /publish, /validate)
  */
 app.post('/execute', (req, res) => {
+  const secret = process.env.SALES;
     // Handle the data from Journey Builder, if needed
-    console.log('Execute payload:', req.body);
-    console.log('Request Headers:', req.headers);
+    jwt.verify(req.body.toString('utf8'), secret, {
+      algorithm: 'HS256'
+    }, function(err, decoded) {
+      if (err) {
+        console.log('Error decoding JWT:', err);
+        return res.status(400).json({ error: 'Invalid JWT' });
+      }
+      console.log('Decoded JWT:', decoded);
+    });
+
+    console.log('Execute payload:', decoded);
+    // console.log('Request Headers:', req.headers);
     const DUPLICATED_EMAILS = {
       emails: ['isandrearamirez@salesforce.com', 'test@example.com'] // Example emails
   };
-  const inArguments = req.body.inArguments || [];
+  const inArguments = decoded.inArguments || [];
   let emailAddress;
 
   emailAddress = inArguments[0].emailAddress;
