@@ -5,7 +5,7 @@
       "category": "customer",
       "description": "Custom Activity for Passing a Parameter to an External API"
     },
-    "type": "REST",
+    "type": "RESTDECISION",
     "lang": {
       "en-US": {
         "name": "Custom API Activity",
@@ -15,6 +15,7 @@
     "arguments": {
       "execute": {
         "inArguments": [],
+        "outArguments": [],
         "url": "https://yourserver.example.com/journeybuilder/execute",
         "verb": "POST",
         "body": ""

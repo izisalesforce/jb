@@ -37,7 +37,7 @@
           "branchResult": "accepted"
       },
       "metaData": {
-          "label": "Accepted"
+          "label": "Accepted Contact"
       }
   },
   {
@@ -45,11 +45,10 @@
           "branchResult": "excluded"
       },
       "metaData": {
-          "label": "Excluded"
+          "label": "Excluded Contact"
       }
   }
   ],
-  "errors": [],
 "schema": {
   "arguments": {
     "execute": {

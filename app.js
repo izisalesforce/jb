@@ -22,7 +22,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.post('/execute', (req, res) => {
     // Handle the data from Journey Builder, if needed
     console.log('Execute payload:', req.body);
-  
+    const DUPLICATED_EMAILS = {
+      emails: ['isandrearamirez@salesforce.com', 'test@example.com'] // Example emails
+  };
+  const inArguments = req.body.inArguments || [];
+  let emailAddress;
+
+  emailAddress = inArguments[0].emailAddress;
+  const isDuplicated = DUPLICATED_EMAILS.emails.includes(emailAddress);
+
+        console.log('Is email duplicated:', isDuplicated);
+
+        if (isDuplicated) {
+            return res.status(200).json({ branchResult: 'excluded' });
+        } else {
+            return res.status(200).json({ branchResult: 'accepted' });
+        }
+
     // Example: send a success response
     //return re(s.status(200).json({ status: 'ok' });
     const responsePayload = { branchResult: "excluded" };
