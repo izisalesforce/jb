@@ -2,7 +2,7 @@
     "name": "",
     "id": null,
     "key": "REST-1",
-    "type": "REST",
+    "type": "RESTDECISION",
     "arguments": {
       "execute": {
         "inArguments": [
@@ -27,22 +27,6 @@
       "isConfigured": true
     },
     "editable": true,
-    "schema": {
-      "arguments": {
-        "execute": {
-          "inArguments": [],
-          "outArguments": [
-            {
-              "branchResult": {
-                "dataType": "Text",
-                "direction": "out",
-                "access": "visible"
-              }
-            }
-          ]
-        }
-      }
-    },
    "outcomes": [
     {
         "arguments": {
@@ -60,7 +44,21 @@
             "label": "Excluded"
         }
     }
-],
-    "errors": []
+    ],
+    "errors": [],
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [{
+          "discountCode": {
+            "dataType": "Text",
+            "direction": "in",
+            "access": "visible"
+          }
+        }],
+        "outArguments": []
+      }
+    }
   }
+}
   
